@@ -22,6 +22,7 @@ namespace To_Do_List.Pages.Checkout
 
             var mission = new Missions();
             mission.MissionText = MissionText;
+            mission.DateTime= DateTime.Now;
 
             _context.mission = mission;
             _context.SaveChanges();
