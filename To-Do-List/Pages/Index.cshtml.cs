@@ -8,7 +8,7 @@ namespace To_Do_List.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public List<Missions> missions = new List<Missions>(){};
+        public List<Missions> missionsList = new List<Missions>(){};
 
         public IndexModel(ILogger<IndexModel> logger)
         {

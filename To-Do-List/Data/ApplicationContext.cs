@@ -5,7 +5,7 @@ namespace To_Do_List.Data
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<Missions> missions { get; set; }
+        public DbSet<Missions> MissionsOrder { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options):base(options)
         {

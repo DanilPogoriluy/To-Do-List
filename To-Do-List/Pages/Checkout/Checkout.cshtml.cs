@@ -9,6 +9,7 @@ namespace To_Do_List.Pages.Checkout
     public class CheckoutModel : PageModel
     {
         public string MissionText { get; set; }
+
         private readonly ApplicationContext _context;
 
         public CheckoutModel(ApplicationContext context)
@@ -22,9 +23,9 @@ namespace To_Do_List.Pages.Checkout
 
             var mission = new Missions();
             mission.MissionText = MissionText;
-            mission.DateTime= DateTime.Now;
+            mission.DateTime = DateTime.Now;
 
-            _context.mission = mission;
+            _context.MissionsOrder.Add(mission);
             _context.SaveChanges();
         }
     }
