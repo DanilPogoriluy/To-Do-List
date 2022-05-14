@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using To_Do_List.Data;
+using To_Do_List.Models;
 
 namespace To_Do_List.Pages.Checkout
 {
@@ -7,10 +9,22 @@ namespace To_Do_List.Pages.Checkout
     public class CheckoutModel : PageModel
     {
         public string MissionText { get; set; }
+        private readonly ApplicationContext _context;
+
+        public CheckoutModel(ApplicationContext context)
+        {
+            _context = context;
+        }
 
         public void OnGet()
         {
             if (string.IsNullOrEmpty(MissionText)) MissionText = "Empty";
+
+            var mission = new Missions();
+            mission.MissionText = MissionText;
+
+            _context.mission = mission;
+            _context.SaveChanges();
         }
     }
 }
