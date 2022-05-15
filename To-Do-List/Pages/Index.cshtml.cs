@@ -18,12 +18,6 @@ namespace To_Do_List.Pages
             _context = context;
         }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
-
         public async Task OnGetAsync()
         {
             Missions = await _context.MissionsOrder
