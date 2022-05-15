@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using To_Do_List.Data;
 using To_Do_List.Models;
 
 namespace To_Do_List.Pages
@@ -7,17 +9,20 @@ namespace To_Do_List.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private readonly ApplicationContext _context;
 
-        public List<Missions> missionsList = new List<Missions>(){};
+        public IList<Missions> Missions { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ApplicationContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            Missions = await _context.MissionsOrder
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }

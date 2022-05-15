@@ -24,17 +24,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.missionsList)
+            @foreach (var item in Model.Missions)
             {
                 <tr>
                     <td>
-                        @item.Id
+                        @Html.DisplayFor(modelitem => item.Id)
                     </td>
                     <td>
-                        @item.MissionText
+                        @Html.DisplayFor(modelitem => item.MissionText)
                     </td>
                     <td>
-                        @item.DateTime
+                        @Html.DisplayFor(modelitem => item.DateTime)
                     </td>
                     <td>
                         
