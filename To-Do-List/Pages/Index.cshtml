@@ -4,6 +4,9 @@
     ViewData["Title"] = "Home page";
 }
 
+@{
+    int i = 1;
+}
 <div>
     <div class="text-center">
         <h1>You need to do it</h1>
@@ -28,7 +31,8 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelitem => item.Id)
+                        @Html.DisplayFor(modelitem => i)
+                        @{i++;}
                     </td>
                     <td>
                         @Html.DisplayFor(modelitem => item.MissionText)
