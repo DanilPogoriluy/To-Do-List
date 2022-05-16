@@ -4,8 +4,47 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <div>
+@{
+    int i = 1;
+}
+<div>
+    <div class="text-center">
         <h1>You need to do it</h1>
     </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Number
+                </th>
+                <th>
+                    Text
+                </th>
+                <th>
+                    Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Missions)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelitem => i)
+                        @{i++;}
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.MissionText)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.DateTime)
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

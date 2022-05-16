@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using To_Do_List.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ApplicationContext>(options =>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("MissionsContext")));
 
 var app = builder.Build();
 
