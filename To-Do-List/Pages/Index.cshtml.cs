@@ -20,7 +20,6 @@ namespace To_Do_List.Pages
 
         public IActionResult OnPost()
         {
-            //Make Redirect Result in Delete Page
             return RedirectToPage("/Forms/Delete");
         }
 
