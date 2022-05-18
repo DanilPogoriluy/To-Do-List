@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using To_Do_List.Data;
 using To_Do_List.Models;
 
@@ -8,7 +9,6 @@ namespace To_Do_List.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
         private readonly ApplicationContext _context;
 
         public IList<Missions> Missions { get; set; }
@@ -23,6 +23,13 @@ namespace To_Do_List.Pages
             Missions = await _context.MissionsOrder
                 .AsNoTracking()
                 .ToListAsync();
+        }
+
+        public IActionResult OnGetDelete(int id)
+        {
+            _context.Remove(_context.MissionsOrder.Find(id));
+            _context.SaveChanges();
+            return RedirectToPage("Index");
         }
     }
 }
