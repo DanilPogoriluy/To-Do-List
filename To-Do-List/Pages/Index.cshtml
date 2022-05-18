@@ -23,7 +23,7 @@
                 <th>
                     Date
                 </th>
-                <th></th>
+                <th></th> @*create new row*@
             </tr>
         </thead>
         <tbody>
@@ -41,7 +41,7 @@
                         @Html.DisplayFor(modelitem => item.DateTime)
                     </td>
                     <td>
-                        <a class=" nav-link text-dark " asp-area="" asp-page="/Forms/Delete">Home Page</a>
+                        <a asp-page="index" asp-page-handler="delete" asp-route-id="@item.Id">Delete</a>
                     </td>
                 </tr>
             }
