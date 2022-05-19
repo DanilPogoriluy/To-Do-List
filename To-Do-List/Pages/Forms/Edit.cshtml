@@ -1,0 +1,18 @@
+﻿@page
+@model To_Do_List.Pages.Forms.EditModel
+@{
+}
+
+<h2 class=text-center>Edit Page</h2>
+
+<div>
+    <div>
+        <div class=text-center>
+            <form method="post">
+                <h5>Mission Text: </h5>
+                <input type="text" asp-for="MissionText" class="btn border border-dark w-25" placeholder="Write a new your mission.."/>
+                <button class="btn btn-primary" type="submit">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
