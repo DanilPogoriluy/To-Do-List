@@ -34,9 +34,7 @@ namespace To_Do_List.Pages
 
         public IActionResult OnGetEdit(int id)
         {
-            var mission = new Missions();
-            mission.Id = id;
-            return RedirectToPage("/Forms/Edit", new {mission.Id});
+            return RedirectToPage("/Forms/Edit", id);
         }
     }
 }

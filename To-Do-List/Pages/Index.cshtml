@@ -23,8 +23,9 @@
                 <th>
                     Date
                 </th>
-                <th></th> @*create new row*@
-                <th></th>
+                <th>
+                    Operations
+                </th> @*create new row*@
             </tr>
         </thead>
         <tbody>
@@ -43,10 +44,7 @@
                     </td>
                     <td>
                         <a asp-page="Index" asp-page-handler="delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                    <td>
                         <a asp-page="/Forms/Edit" asp-page-handler="edit" asp-route-id="@item.Id">Edit</a>
-                        <p>@item.Id</p> @*Output Id - Test*@
                     </td>
                 </tr>
             }
