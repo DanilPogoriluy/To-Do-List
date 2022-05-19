@@ -24,6 +24,7 @@
                     Date
                 </th>
                 <th></th> @*create new row*@
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -41,7 +42,11 @@
                         @Html.DisplayFor(modelitem => item.DateTime)
                     </td>
                     <td>
-                        <a asp-page="index" asp-page-handler="delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-page="Index" asp-page-handler="delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                    <td>
+                        <a asp-page="/Forms/Edit" asp-page-handler="edit" asp-route-id="@item.Id">Edit</a>
+                        <p>@item.Id</p> @*Output Id - Test*@
                     </td>
                 </tr>
             }

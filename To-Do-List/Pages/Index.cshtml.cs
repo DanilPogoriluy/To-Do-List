@@ -31,5 +31,12 @@ namespace To_Do_List.Pages
             _context.SaveChanges();
             return RedirectToPage("Index");
         }
+
+        public IActionResult OnGetEdit(int id)
+        {
+            var mission = new Missions();
+            mission.Id = id;
+            return RedirectToPage("/Forms/Edit", new {mission.Id});
+        }
     }
 }
