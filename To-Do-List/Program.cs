@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using To_Do_List.Data;
-
+//2 baddies 2 baddies 1 porche
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
